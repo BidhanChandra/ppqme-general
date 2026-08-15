@@ -1,0 +1,68 @@
+{
+  "state_labels": [
+    "S1S0",
+    "S0S1",
+    "CA",
+    "AC",
+    "TT"
+  ],
+  "hamiltonian_ev": [
+    [
+      2.12,
+      0,
+      -0.1258,
+      -0.1015,
+      0
+    ],
+    [
+      0,
+      2.12,
+      -0.1015,
+      -0.1258,
+      0
+    ],
+    [
+      -0.1258,
+      -0.1015,
+      2.32,
+      0,
+      -0.1490514508483564
+    ],
+    [
+      -0.1015,
+      -0.1258,
+      0,
+      2.32,
+      0.1281083135475602
+    ],
+    [
+      0,
+      0,
+      -0.1490514508483564,
+      0.1281083135475602,
+      1.72
+    ]
+  ],
+  "initial_state": {
+    "type": "localized",
+    "state": 0
+  },
+  "bath": {
+    "temperature_kelvin": 300.0,
+    "spectral_density": {
+      "type": "debye",
+      "reorganization_energy": 0.05,
+      "cutoff": 0.18
+    }
+  },
+  "simulation": {
+    "method": "ppqme",
+    "omega_h": 0.088,
+    "alpha": 2.0,
+    "bath_omega_max": 2.0,
+    "frequency_points": 12000,
+    "rate_dt_fs": 0.5,
+    "prop_dt_fs": 0.5,
+    "final_time_fs": 200.0
+  }
+}

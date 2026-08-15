@@ -1,0 +1,38 @@
+{
+  "state_labels": [
+    "A",
+    "B"
+  ],
+  "hamiltonian_ev": [
+    [
+      0.0,
+      0.02
+    ],
+    [
+      0.02,
+      0.1
+    ]
+  ],
+  "initial_state": {
+    "type": "localized",
+    "state": 0
+  },
+  "bath": {
+    "temperature_kelvin": 300.0,
+    "spectral_density": {
+      "type": "debye",
+      "reorganization_energy": 0.03,
+      "cutoff": 0.18
+    }
+  },
+  "simulation": {
+    "method": "ppqme",
+    "omega_h": 0.1,
+    "alpha": 2.0,
+    "bath_omega_max": 0.6,
+    "frequency_points": 1000,
+    "rate_dt_fs": 0.5,
+    "prop_dt_fs": 1.0,
+    "final_time_fs": 10.0
+  }
+}
