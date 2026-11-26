@@ -5,16 +5,25 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ppqme-general"
 version = "0.1.0"
-description = "General N-state homogeneous partial-polaron TCL2 quantum master equation solver"
+description = "Partial-polaron quantum master equations: general N-state TCL2 solver (ppqme) and GOA TCL2/3/4 frame-scan package (goa_pqme)"
 requires-python = ">=3.10"
 dependencies = [
   "numpy>=1.24",
   "scipy>=1.10",
   "matplotlib>=3.7",
+  "pandas>=1.5",
 ]
+
+[project.optional-dependencies]
+tempo = ["oqupy"]          # goa_pqme TEMPO references
+al = ["scikit-learn"]      # goa_pqme active learning
+test = ["pytest>=7"]
+
+[project.scripts]
+goa-pqme = "goa_pqme.__main__:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
 [tool.setuptools]
-packages = ["ppqme", "models", "advanced"]
+packages = ["ppqme", "models", "advanced", "goa_pqme", "goa_pqme.studies", "goa_pqme.analysis", "goa_pqme.al"]
