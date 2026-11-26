@@ -6,3 +6,8 @@ venv/
 results/
 *.egg-info/
 .DS_Store
+
+# goa_pqme generated results
+work/
+notebooks/results/
+frames_cache/

@@ -195,6 +195,21 @@ Also inspect `diagnostics.txt`. TCL2/p-PQME is not guaranteed to preserve comple
 
 The repository retains the original singlet-fission benchmark utilities and tests. `examples/five_state_nakano.json` encodes the 5-state Hamiltonian used in the accompanying validation notebook; it is an example input, not a hard-coded assumption of the solver.
 
+## GOA TCL2/3/4 package (`goa_pqme`)
+
+The repository also contains `goa_pqme`, a separate package for the two-state GOA donor–acceptor model. It goes beyond
+TCL2: ordered-cumulant **TCL3/TCL4** generators from exact multi-time moments of the partial-polaron bath operators,
+scans over the polaron frame $(\alpha,\omega_h)$, comparison with numerically exact TEMPO dynamics, the paper analyses,
+and active learning of the higher-order corrections. It shares no code with `ppqme`, and `ppqme` is unchanged.
+
+```bash
+python -m goa_pqme --help                     # info | frame | scan | summary | tempo
+python tests/test_goa_pqme.py                 # or: pytest tests/test_goa_pqme.py
+bash scripts/goa/run_scan.sh 8                # frame scan -> work/scan/
+```
+Documentation: [`docs/goa_pqme.md`](docs/goa_pqme.md). Theory and code walk-through (bath correlation function →
+K2 → K3 → K4 → r4): [`notebooks/PPQME_Code_Walkthrough.ipynb`](notebooks/PPQME_Code_Walkthrough.ipynb).
+
 ## Citation
 
 If this code is used for publication, cite the p-PQME theoretical source(s) appropriate to the implementation and the specific model/parameter source used in your calculation. Add the exact bibliographic entries here before making the repository public.
